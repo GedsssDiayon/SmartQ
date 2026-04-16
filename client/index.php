@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+
+	<head>
+		<link rel="icon" type="image/png" href="assets/logo/sq.png">
+	</head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -15,8 +19,7 @@
 	<nav class="top-bar">
 
 		<div class="logo">
-			<img src="assets/images/logo.png" alt="SmartQ Logo">
-			<h1>SmartQ</h1>
+			<img src="assets/logo/sq-blue-d.png" alt="SmartQ Logo">
 		</div>
 
 		<div class="nav-links">
@@ -33,12 +36,15 @@
 	</nav>
 
 	<!-- HERO SECTION -->
-	<div class="hero">
-		<div class="hero-content">
-			<h1>SmartQ - Efficient Queuing System</h1>
-			<p>SmartQ is a modern queuing system that helps businesses manage their customers efficiently.</p>
+	<section class="hero-section">
+		<div class="hero">
+			<div class="hero-content">
+				<h1>SmartQ - Efficient Queuing System</h1>
+				<p>SmartQ is a modern queuing system that helps businesses manage their customers efficiently.</p>
+
+			</div>
 		</div>
-	</div>
+	</section>
 
 
 </body>
