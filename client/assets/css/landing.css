@@ -1,16 +1,212 @@
-.top-bar {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  display: flex;
+/* 
+  SmartQ Landing Page Styles
+  Focus: Modern, premium, and clean aesthetic.
+*/
 
-  width: 70%;
-  margin: 20px auto;
+/* --- TOP BAR --- */
+.top-bar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  transition: var(--transition-normal);
 }
 
 .logo {
   display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
 
+.logo img {
+  height: 40px;
+  width: auto;
+  transition: transform var(--transition-fast);
+}
 
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: var(--font-sm);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-actions a {
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+/* Login link (Styled as secondary) */
+.nav-actions a:first-child {
+  color: var(--text-main);
+}
+
+.nav-actions a:first-child:hover {
+  color: var(--primary-color);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* Sign up link (Styled as primary button) */
+.nav-actions a:last-child {
+  background: var(--primary-color);
+  color: var(--text-on-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-actions a:last-child:hover {
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4f8;
+  /* Fallback */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)),
+    url('../img/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+}
+
+.hero {
+  max-width: 1200px;
+  width: 90%;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: var(--font-xxl);
+  color: var(--text-main);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: var(--font-md);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+  padding: var(--space-md) var(--space-xxl);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  font-size: var(--font-base);
+}
+
+.btn-hero-primary {
+  background: var(--primary-color);
+  color: var(--text-on-primary) !important;
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+}
+
+.btn-hero-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.23);
+}
+
+.btn-hero-secondary {
+  background: white;
+  color: var(--text-main) !important;
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-hero-secondary:hover {
+  background: #f8fafc;
+  border-color: var(--text-main);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .top-bar {
+    width: 95%;
+    padding: 0 var(--space-md);
+  }
+
+  .nav-links {
+    display: none;
+    /* Hide links on mobile for now */
+  }
+
+  .hero-content h1 {
+    font-size: var(--font-xl);
+  }
 }
